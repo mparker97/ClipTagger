@@ -1,0 +1,52 @@
+CREATE TABLE Videos (
+	Name VARCHAR(256),
+	Date DATE,
+	Length INT,
+	Framerate DOUBLE,
+	Resolution VARCHAR,
+	Subject VARCHAR,
+	Location VARCHAR,
+	Trick VARCHAR,
+	Collection VARCHAR,
+	Tags VARCHAR,
+
+	FOREIGN KEY Resolution REFERENCES Resolution Name ON UPDATE CASCADE,
+	FOREIGN KEY Subject REFERENCES Subjects Name ON UPDATE CASCADE,
+	FOREIGN KEY Location REFERENCES Locations Name ON UPDATE CASCADE,
+	FOREIGN KEY Trick REFERENCES Tricks Name ON UPDATE CASCADE,
+	FOREIGN KEY Collection REFERENCES Collectionss Name ON UPDATE CASCADE,
+	PRIMARY KEY Name
+);
+
+CREATE TABLE Resolution (
+	Name VARCHAR,
+	X INT,
+	Y INT,
+
+	PRIMARY KEY Name
+);
+
+CREATE TABLE Locations (
+	Name VARCHAR,
+
+	PRIMARY KEY Name
+);
+
+CREATE TABLE Subjects (
+	Name VARCHAR,
+
+	PRIMARY KEY Name
+);
+
+CREATE TABLE Tricks (
+	Name VARCHAR,
+
+	PRIMARY KEY Name
+);
+
+CREATE TABLE Collections (
+	Name VARCHAR,
+
+	PRIMARY KEY Name
+);
+
